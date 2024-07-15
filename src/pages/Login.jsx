@@ -7,8 +7,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [isLoged, setIsLoged] = useState(false);
 
   const loginProcess = async (email, password) => {
+
     try {
       const res = await fetch('https://bookstorebackend-3qw1.onrender.com/login/login', {
         method: "POST",
@@ -29,6 +31,7 @@ export default function Login() {
         const { token} = data;
         localStorage.setItem("token", token);
         toast("Login success");
+        setIsLoged(true);
         return true;
       }
     } catch (error) {
@@ -39,9 +42,9 @@ export default function Login() {
     e.preventDefault();
     try {
       const isLoged = await loginProcess(email, password);
-      console.log(isLoged);
       if (isLoged) {
-        navigate("/");
+        navigate("/book");
+        window.location.reload();
       }
     } catch (error) {
       setError(error.message);

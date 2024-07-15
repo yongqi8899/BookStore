@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect} from "react";
 const Home = () => {
     const [allBooks, setAllBooks] = useState([]);
@@ -42,6 +40,7 @@ useEffect(async () => {
       } catch (error) {
         setError(error.message);
       }
+      
     
       setAllBooks(data);
         
