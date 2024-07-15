@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 export default function Register() {
   return (
     <>
@@ -45,13 +46,18 @@ export default function Register() {
                   placeholder="password"
                   className="input input-bordered"
                 />
-              </div>
+              </div><br />
+              <p>
+                already have account?{" "}
+                <NavLink to="/login" className="text-teal-400">
+                  Login
+                </NavLink>
+              </p>
               <div className="flex form-control mt-6">
-                <input
+              <button
                   type="submit"
-                  value="Register"
                   className="btn btn-primary bg-teal-400 hover:bg-teal-600 hover:border-transparent border-transparent text-white"
-                />
+                >Register</button>
               </div>
             </form>
           </div>

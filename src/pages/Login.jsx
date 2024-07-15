@@ -36,11 +36,10 @@ export default function Login() {
                 </NavLink>
               </p>
               <div className="form-control mt-6">
-                <input
+                <button
                   type="submit"
-                  value="Login"
                   className="btn btn-primary bg-teal-400 hover:bg-teal-600 hover:border-transparent border-transparent text-white"
-                />
+                >Login</button>
               </div>
             </form>
           </div>
