@@ -4,6 +4,8 @@ import { RootLayout } from "./layout";
 import { ErrorPage, Home, Login, Register, Book } from "./pages";
 
 export default function App() {
+
+  
   const router = createBrowserRouter([
     {
       path: "/",
