@@ -17,10 +17,12 @@ const AddNewBook = ({onClose}) => {
         publishDate,
         description
       };
-  
-      fetch('http://localhost:8080/book/book', {
+   
+      
+      fetch('https://bookstorebackend-3qw1.onrender.com/books', {
         method: "POST",
         headers: {
+            "token":localStorage.getItem('token'),
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newBook),
@@ -29,6 +31,7 @@ const AddNewBook = ({onClose}) => {
         .then((data) => {
            console.log(data);});
 
+        
       console.log(newBook);
       onClose();
     };
